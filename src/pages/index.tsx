@@ -7,7 +7,7 @@ export default function Home() {
       initial={{ scale: 0, borderRadius: "50%" }}
       animate={{ scale: 1 }}
       exit={{ scale: 0 }}
-      transition={{ ease: "easeOut", duration: 1 }}
+      transition={{ ease: "easeOut", duration: 0.5 }}
     >
       <div className="h-screen bg-main-green opacity-50"></div>
     </motion.div>
