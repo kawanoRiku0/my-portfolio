@@ -9,7 +9,6 @@ type Props = {
 };
 
 export default function Blog({ articles, error }: Props) {
-  console.log(articles);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -17,7 +16,7 @@ export default function Blog({ articles, error }: Props) {
       exit={{ opacity: 0 }}
       transition={{ ease: "easeOut", duration: 0.5 }}
     >
-      <div className="h-screen bg-main-blue bg-opacity-50">
+      <div className=" min-h-screen bg-main-blue bg-opacity-50">
         <div className=" pt-16">
           <h1 className="max-w-5xl font-bold mx-auto container text-2xl md:text-4xl p-4 text-white">
             BLOG
