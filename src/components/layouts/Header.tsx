@@ -5,7 +5,7 @@ const Header: FC = () => {
   return (
     <header className=" body-font">
       <div className="container mx-auto flex  p-5 flex-row justify-center items-center">
-        <nav className="text-white space-x-7">
+        <nav className="w-full min-w-[280px] text-base sm:text-lg  max-w-lg py-4 flex justify-between font-mono text-white md:text-2xl">
           <Link href={"/"} passHref>
             <a>HOME</a>
           </Link>
