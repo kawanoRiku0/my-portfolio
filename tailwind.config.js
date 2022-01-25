@@ -2,6 +2,9 @@ module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        Pacifico: ["Pacifico"],
+      },
       colors: {
         "main-purple": "#D08DEB",
         "main-blue": "#4CC0F5",
