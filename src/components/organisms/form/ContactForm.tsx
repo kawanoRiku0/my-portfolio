@@ -1,3 +1,4 @@
+import { init, send } from "@emailjs/browser";
 import { FC } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 
@@ -12,10 +13,34 @@ const ContactForm: FC = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    console.log("送信");
+
+    const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+
+    if (userID && serviceID && templateID) {
+      init(userID);
+
+      const template_params = {
+        from_name: data.name,
+        email: data.email,
+        content: data.content,
+      };
+
+      try {
+        await send(serviceID, templateID, template_params);
+        alert("送信成功");
+        reset();
+      } catch (e) {
+        console.log(e);
+        alert("送信失敗");
+      }
+    }
   };
 
   return (
@@ -40,7 +65,7 @@ const ContactForm: FC = () => {
       </div>
       <div>
         <label htmlFor="email" className=" font-bold text-black block mb-3">
-          メールアドレス{" "}
+          メールアドレス
           {errors.name && (
             <span className="text-red-500 ml-4">※入力してください</span>
           )}
