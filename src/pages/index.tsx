@@ -11,12 +11,19 @@ export default function Home() {
     >
       <div className=" relative h-screen bg-main-green opacity-50 ">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2  text-white space-y-2 md:space-y-8">
-          <h2 className=" text-[40px] md:text-7xl opacity-90 font-Pacifico">
-            KawanoRiku
-          </h2>
-          <p className="text-center text-2xl md:text-4xl font-serif">
-            WEB&nbsp;DEVELOPER
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ delay: 1, duration: 0.5 }}
+          >
+            <h2 className=" text-[40px] md:text-7xl opacity-90 font-Pacifico">
+              KawanoRiku
+            </h2>
+            <p className="text-center text-2xl md:text-4xl font-serif">
+              WEB&nbsp;DEVELOPER
+            </p>
+          </motion.div>
         </div>
       </div>
     </motion.div>
