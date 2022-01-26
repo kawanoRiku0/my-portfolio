@@ -7,7 +7,7 @@ type Props = {
   subText?: string;
 };
 
-export const MyYearTextBox: FC<Props> = ({ year, subText }) => {
+export const YearTextBox: FC<Props> = ({ year, subText }) => {
   return (
     <TextBox
       textClassName="text-white font-bold text-2xl sm:text-4xl block text-center"

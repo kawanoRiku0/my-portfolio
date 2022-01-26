@@ -3,9 +3,9 @@ import { NextPage } from "next";
 
 import { motion } from "framer-motion";
 
-import { MyChronologySection } from "components/domain/AboutMe/molecules/MyChronologySection";
-import { MyYearTextBox } from "components/domain/AboutMe/atoms/MyYearTextBox";
-import { MyEventTextBox } from "components/domain/AboutMe/atoms/MyEventTextBox";
+import { ChronologySection } from "components/domain/AboutMe/molecules/ChronologySection";
+import { YearTextBox } from "components/domain/AboutMe/atoms/YearTextBox";
+import { EventTextBox } from "components/domain/AboutMe/atoms/EventTextBox";
 
 const About: NextPage = () => {
   return (
@@ -21,22 +21,22 @@ const About: NextPage = () => {
         </h2>
         <div className=" max-w-4xl mx-auto">
           <div className="px-4 pt-20">
-            <MyChronologySection
-              myYearTextBox={<MyYearTextBox year="2002" />}
+            <ChronologySection
+              yearTextBox={<YearTextBox year="2002" />}
               imageUrl="/images/no-image.jpg"
-              myEventTextBoxList={[<MyEventTextBox text="大阪で爆誕" />]}
+              eventTextBoxList={[<EventTextBox text="大阪で爆誕" />]}
             />
           </div>
           <div className="px-4 pt-20">
-            <MyChronologySection
-              myYearTextBox={<MyYearTextBox year="2012" subText="小学生時代" />}
+            <ChronologySection
+              yearTextBox={<YearTextBox year="2012" subText="小学生時代" />}
               imageUrl="/images/no-image.jpg"
-              myEventTextBoxList={[
-                <MyEventTextBox
+              eventTextBoxList={[
+                <EventTextBox
                   text="バスケの全国大会に出場"
                   subText="人生のハイライト"
                 />,
-                <MyEventTextBox
+                <EventTextBox
                   text="全国大会で最低のプレー連発"
                   subText="人生最大の挫折"
                 />,
@@ -44,16 +44,16 @@ const About: NextPage = () => {
             />
           </div>
           <div className="px-4 pt-20">
-            <MyChronologySection
-              myYearTextBox={<MyYearTextBox year="2015" subText="中学時代" />}
+            <ChronologySection
+              yearTextBox={<YearTextBox year="2015" subText="中学時代" />}
               imageUrl="/images/no-image.jpg"
-              myEventTextBoxList={[
-                <MyEventTextBox
+              eventTextBoxList={[
+                <EventTextBox
                   text="悔しさをバネにバスケ頑張る"
                   subText="選抜選手になったりする"
                 />,
-                <MyEventTextBox text="中二病発生で自分は最強のバスケプレイヤーだと錯覚" />,
-                <MyEventTextBox
+                <EventTextBox text="中二病発生で自分は最強のバスケプレイヤーだと錯覚" />,
+                <EventTextBox
                   text="勉強はキチンと頑張る"
                   subText="大阪府立高津高校に進学（ちょっとだけ賢い）"
                 />,
@@ -61,19 +61,19 @@ const About: NextPage = () => {
             />
           </div>
           <div className="px-4 pt-20">
-            <MyChronologySection
-              myYearTextBox={<MyYearTextBox year="2017" subText="高校時代" />}
+            <ChronologySection
+              yearTextBox={<YearTextBox year="2017" subText="高校時代" />}
               imageUrl="/images/no-image.jpg"
-              myEventTextBoxList={[
-                <MyEventTextBox
+              eventTextBoxList={[
+                <EventTextBox
                   text="天狗になっていたが、高校バスケのレベルの高さに驚愕"
                   subText="身長がでかすぎる"
                 />,
-                <MyEventTextBox
+                <EventTextBox
                   text="初心に戻りバスケ頑張る"
                   subText="結構名誉な選抜選手に選ばれる"
                 />,
-                <MyEventTextBox
+                <EventTextBox
                   text="コロナによりバスケ人生終了"
                   subText="頑張る対象が無くなり、途方に暮れる"
                 />,
@@ -81,24 +81,24 @@ const About: NextPage = () => {
             />
           </div>
           <div className="px-4 pt-20">
-            <MyChronologySection
-              myYearTextBox={<MyYearTextBox year="2020" subText="高校三年生" />}
+            <ChronologySection
+              yearTextBox={<YearTextBox year="2020" subText="高校三年生" />}
               imageUrl="/images/no-image.jpg"
-              myEventTextBoxList={[
-                <MyEventTextBox
+              eventTextBoxList={[
+                <EventTextBox
                   text="そんな時にプログラミングと出会う"
                   subText="なんだこれオモロイ！"
                 />,
-                <MyEventTextBox text="一般受験ルートを捨て去り、プログラミング勉強開始" />,
-                <MyEventTextBox
+                <EventTextBox text="一般受験ルートを捨て去り、プログラミング勉強開始" />,
+                <EventTextBox
                   text="AO入試で大阪国際工科専門職大学に合格"
                   subText="プログラミングの学習経験が活きる"
                 />,
-                <MyEventTextBox
+                <EventTextBox
                   text="インターン開始"
                   subText="最初はwebから入り、動画編集者としてのポジションを得る"
                 />,
-                <MyEventTextBox
+                <EventTextBox
                   text="動画編集めっちゃがんばる"
                   subText="代わりにプログラミングがおざなりに..."
                 />,
@@ -106,21 +106,21 @@ const About: NextPage = () => {
             />
           </div>
           <div className="px-4 pt-20">
-            <MyChronologySection
-              myYearTextBox={
-                <MyYearTextBox year="2021" subText="大学生/これから" />
+            <ChronologySection
+              yearTextBox={
+                <YearTextBox year="2021" subText="大学生/これから" />
               }
               imageUrl="/images/no-image.jpg"
-              myEventTextBoxList={[
-                <MyEventTextBox
+              eventTextBoxList={[
+                <EventTextBox
                   text="動画編集もっと頑張る"
                   subText="別インターンも開始"
                 />,
-                <MyEventTextBox
+                <EventTextBox
                   text="急激にプログラミング熱が再来"
                   subText="プログラミングスクールのメンターを開始/学習再開"
                 />,
-                <MyEventTextBox text="イマココ" />,
+                <EventTextBox text="イマココ" />,
               ]}
             />
           </div>

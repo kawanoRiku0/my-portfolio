@@ -6,7 +6,7 @@ type Props = {
   text: string;
   subText?: string;
 };
-export const MyEventTextBox: FC<Props> = ({ text, subText }) => {
+export const EventTextBox: FC<Props> = ({ text, subText }) => {
   return (
     <TextBox
       textClassName="text-white font-bold text-base sm:text-3xl"

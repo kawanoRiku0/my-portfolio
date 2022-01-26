@@ -2,21 +2,19 @@ import { FC } from "react";
 import Image from "next/image";
 
 type Props = {
-  myYearTextBox: JSX.Element;
-  myEventTextBoxList: JSX.Element[];
+  yearTextBox: JSX.Element;
+  eventTextBoxList: JSX.Element[];
   imageUrl: string;
 };
 
-export const MyChronologySection: FC<Props> = ({
-  myYearTextBox,
+export const ChronologySection: FC<Props> = ({
+  yearTextBox,
   imageUrl,
-  myEventTextBoxList,
+  eventTextBoxList,
 }) => {
   return (
     <div className="flex">
-      <div className="max-w-[100px] sm:max-w-[140px] w-full">
-        {myYearTextBox}
-      </div>
+      <div className="max-w-[100px] sm:max-w-[140px] w-full">{yearTextBox}</div>
       <div className=" w-full border-l-4 border-white max-w-3xl  ">
         <div className="w-3/4 sm:w-1/2 mx-auto">
           <Image
@@ -29,10 +27,10 @@ export const MyChronologySection: FC<Props> = ({
             className="rounded-2xl"
           />
         </div>
-        {myEventTextBoxList.map((myEventTextBox, index) => {
+        {eventTextBoxList.map((eventTextBox, index) => {
           return (
             <div className="mt-3 ml-1 p-4 bg-gray-500" key={index}>
-              {myEventTextBox}
+              {eventTextBox}
             </div>
           );
         })}
