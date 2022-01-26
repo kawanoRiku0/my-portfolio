@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import ContactForm from "components/organisms/form/ContactForm";
+import { ContactForm } from "components/case/molecules/ContactForm";
 
 export default function Contact() {
   return (

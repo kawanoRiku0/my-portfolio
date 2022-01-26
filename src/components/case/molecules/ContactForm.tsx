@@ -8,7 +8,7 @@ type Inputs = {
   content: string;
 };
 
-const ContactForm: FC = () => {
+export const ContactForm: FC = () => {
   const {
     register,
     handleSubmit,
@@ -98,5 +98,3 @@ const ContactForm: FC = () => {
     </form>
   );
 };
-
-export default ContactForm;
