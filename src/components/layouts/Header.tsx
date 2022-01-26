@@ -3,9 +3,9 @@ import React, { FC } from "react";
 
 const Header: FC = () => {
   return (
-    <header className=" body-font">
-      <div className="container mx-auto flex  p-5 flex-row justify-center items-center">
-        <nav className="w-full min-w-[280px] text-base sm:text-lg  max-w-lg py-4 flex justify-between font-mono text-white md:text-2xl">
+    <header className=" bg-opacity-20 bg-gray-500">
+      <div className="container mx-auto flex p-5 flex-row justify-center items-center bg-transparent">
+        <nav className="w-full min-w-[280px] text-base sm:text-lg max-w-lg  flex justify-between font-mono text-white md:text-2xl body-font">
           <Link href={"/"} passHref>
             <a>HOME</a>
           </Link>
