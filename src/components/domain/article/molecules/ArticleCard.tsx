@@ -8,7 +8,7 @@ type Props = {
 
 const noImage = "/images/no-image.jpg";
 
-const Article: FC<Props> = ({ article }) => {
+export const ArticleCard: FC<Props> = ({ article }) => {
   // タイトルを35文字いないにトリム
   const trimTitle = useCallback((title: string) => {
     let trimedTitle = title;
@@ -44,5 +44,3 @@ const Article: FC<Props> = ({ article }) => {
     </div>
   );
 };
-
-export default Article;

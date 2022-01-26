@@ -1,10 +1,14 @@
-import { client } from "libs/client";
+import React from "react";
+
 import { motion } from "framer-motion";
-import { Article as ArticleType } from "types/article";
-import Article from "components/molecules/Article";
+
+import { client } from "libs/client";
+
+import { Article } from "types/article";
+import { ArticleCard } from "components/domain/article/molecules/ArticleCard";
 
 type Props = {
-  articles?: ArticleType[];
+  articles?: Article[];
   error?: any;
 };
 
@@ -23,7 +27,7 @@ export default function Blog({ articles, error }: Props) {
           </h1>
           <div className="p-4 flex flex-wrap  max-w-5xl justify-between mx-auto after:content-[''] after:block after:w-[29%] after:m-3">
             {articles?.map((article) => {
-              return <Article key={article.id} article={article} />;
+              return <ArticleCard key={article.id} article={article} />;
             })}
           </div>
         </div>
