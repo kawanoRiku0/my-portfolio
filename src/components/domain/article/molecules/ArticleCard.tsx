@@ -1,5 +1,6 @@
-import Link from "next/link";
 import { FC, useCallback } from "react";
+import Link from "next/link";
+
 import { Article } from "types/article";
 
 type Props = {
@@ -9,15 +10,10 @@ type Props = {
 const noImage = "/images/no-image.jpg";
 
 export const ArticleCard: FC<Props> = ({ article }) => {
-  // タイトルを35文字いないにトリム
+  // タイトルを35文字以内にトリム
   const trimTitle = useCallback((title: string) => {
-    let trimedTitle = title;
-
-    if (title.length > 40) {
-      trimedTitle = title.substring(0, 35) + "...";
-    }
-
-    return trimedTitle;
+    // タイトルが35文字以上ならトリムしてリターン,35文字以下なら何もせずにリターン
+    return title.length > 35 ? title.substring(0, 35) + "..." : title;
   }, []);
   return (
     <div className=" bg-white rounded-xl shadow-xl overflow-hidden  md:w-[29%] m-3 w-full hover:cursor-pointer hover:scale-105 transition-all">
