@@ -2,7 +2,7 @@ import React from "react";
 
 import { motion } from "framer-motion";
 
-import { client } from "libs/client";
+import { client } from "libs/microcms/client";
 
 import { Article } from "types/article";
 import { ArticleCard } from "components/domain/article/molecules/ArticleCard";
