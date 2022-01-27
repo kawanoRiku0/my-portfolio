@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import { NextPage } from "next";
 
 import { motion } from "framer-motion";
@@ -7,6 +7,7 @@ import { ChronologySection } from "components/domain/AboutMe/molecules/Chronolog
 import { YearTextBox } from "components/domain/AboutMe/atoms/YearTextBox";
 import { EventTextBox } from "components/domain/AboutMe/atoms/EventTextBox";
 import { FadeInFromBelowProvider } from "components/providers/animation/FadeInFromBelowProvider";
+import { DefaultLayout } from "components/layouts/DefaultLayout";
 
 const About: NextPage = () => {
   return (
@@ -16,10 +17,7 @@ const About: NextPage = () => {
       exit={{ scaleY: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="min-h-screen bg-main-purple bg-opacity-50 py-20 ">
-        <h2 className="text-white font-bold text-3xl  text-center mx-auto">
-          ABOUT ME
-        </h2>
+      <DefaultLayout pageTitle="ABOUT" pageColor="bg-main-purple">
         {/* ページ内コンテンツの表示を遅らせる */}
         <motion.div
           initial={{ opacity: 0, display: "none" }}
@@ -146,7 +144,7 @@ const About: NextPage = () => {
             </FadeInFromBelowProvider>
           </div>
         </motion.div>
-      </div>
+      </DefaultLayout>
     </motion.div>
   );
 };

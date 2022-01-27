@@ -6,6 +6,7 @@ import { client } from "libs/client";
 
 import { Article } from "types/article";
 import { ArticleCard } from "components/domain/article/molecules/ArticleCard";
+import { DefaultLayout } from "components/layouts/DefaultLayout";
 
 type Props = {
   articles?: Article[];
@@ -20,18 +21,13 @@ export default function Blog({ articles, error }: Props) {
       exit={{ opacity: 0 }}
       transition={{ ease: "easeOut", duration: 0.5 }}
     >
-      <div className=" min-h-screen bg-main-blue bg-opacity-50">
-        <div className=" pt-16">
-          <h1 className="max-w-5xl font-bold mx-auto container text-2xl md:text-4xl p-4 text-white">
-            BLOG
-          </h1>
-          <div className="p-4 flex flex-wrap  max-w-5xl justify-between mx-auto after:content-[''] after:block after:w-[29%] after:m-3">
-            {articles?.map((article) => {
-              return <ArticleCard key={article.id} article={article} />;
-            })}
-          </div>
+      <DefaultLayout pageTitle="BLOG" pageColor="bg-main-blue">
+        <div className="p-4 flex flex-wrap  max-w-5xl justify-between mx-auto after:content-[''] after:block after:w-[29%] after:m-3">
+          {articles?.map((article) => {
+            return <ArticleCard key={article.id} article={article} />;
+          })}
         </div>
-      </div>
+      </DefaultLayout>
     </motion.div>
   );
 }
