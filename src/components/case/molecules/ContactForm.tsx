@@ -1,7 +1,11 @@
-import { init, send } from "@emailjs/browser";
-import { FC } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { FC, useState } from "react";
 
+import { SubmitHandler, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+
+import { sendEmail } from "libs/emailJS/sendEmail";
+
+// フォームに使用する値の型
 type Inputs = {
   name: string;
   email: string;
@@ -9,6 +13,10 @@ type Inputs = {
 };
 
 export const ContactForm: FC = () => {
+  // mail送信処理の実行状況を格納
+  const [isSending, setIsSending] = useState(false);
+
+  // react-hook-formから必要な変数,メソッドを分割代入で受け取る
   const {
     register,
     handleSubmit,
@@ -16,31 +24,25 @@ export const ContactForm: FC = () => {
     reset,
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    console.log("送信");
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    // 前の送信処理実行中なら何もしない。
+    if (isSending) return;
 
-    const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
-    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    // ステートを処理中に変更
+    setIsSending(true);
 
-    if (userID && serviceID && templateID) {
-      init(userID);
+    // emailJS送信中,後にトーストを表示
+    toast.promise(sendEmail(data), {
+      loading: "Loading",
+      success: "送信に成功しました",
+      error: "送信に失敗しました\n後ほどお試しください",
+    });
 
-      const template_params = {
-        from_name: data.name,
-        email: data.email,
-        content: data.content,
-      };
+    // ステートを非処理中に変更
+    setIsSending(false);
 
-      try {
-        await send(serviceID, templateID, template_params);
-        alert("送信成功");
-        reset();
-      } catch (e) {
-        console.log(e);
-        alert("送信失敗");
-      }
-    }
+    // フォームの入力欄を初期化
+    reset();
   };
 
   return (
@@ -51,6 +53,7 @@ export const ContactForm: FC = () => {
       <div>
         <label htmlFor="name" className=" font-bold text-black block mb-3">
           お名前
+          {/* 空欄ならエラー表示 */}
           {errors.name && (
             <span className="text-red-500 ml-4">※入力してください</span>
           )}
@@ -66,6 +69,7 @@ export const ContactForm: FC = () => {
       <div>
         <label htmlFor="email" className=" font-bold text-black block mb-3">
           メールアドレス
+          {/* 空欄ならエラー表示 */}
           {errors.name && (
             <span className="text-red-500 ml-4">※入力してください</span>
           )}
@@ -81,6 +85,7 @@ export const ContactForm: FC = () => {
       <div>
         <label htmlFor="content" className=" font-bold text-black block mb-3">
           お問い合わせ内容
+          {/* 空欄ならエラー表示 */}
           {errors.name && (
             <span className="text-red-500 ml-4">※入力してください</span>
           )}
