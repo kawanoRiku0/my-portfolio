@@ -5,11 +5,10 @@ export type Article = {
   publishedAt: string;
   revisedAt: string;
   title: string;
-  body: string;
-  eye_catch: {
+  image: {
     url: string;
     height: number;
     width: number;
   };
-  tag: string;
+  url: string;
 };
