@@ -11,6 +11,7 @@ export const FadeInFromBelowProvider: FC<Props> = ({ children }) => {
   const { ref, inView } = useInView();
 
   useEffect(() => {
+    // 要素が画面に入ってきたタイミングでフェードイン
     if (inView) {
       control.start("visible");
     }
@@ -21,7 +22,6 @@ export const FadeInFromBelowProvider: FC<Props> = ({ children }) => {
     visible: {
       y: 0,
       opacity: 1,
-
       transition: {
         duration: 0.5,
         delay: 0.8,

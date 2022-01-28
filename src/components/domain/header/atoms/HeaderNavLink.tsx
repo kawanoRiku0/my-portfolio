@@ -14,6 +14,7 @@ export const HeaderNavLink: FC<Props> = ({ path, text }) => {
     <Link href={path} passHref>
       <a
         className={
+          // 閲覧中のページと一致する場合、ボーダーで装飾
           pathname == path
             ? "py-2 px-1 sm:px-3 mx-1 sm:mx-3  border-b-2 border-white"
             : " py-2 px-1 sm:px-3 mx-1 sm:mx-3 "

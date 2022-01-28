@@ -16,6 +16,7 @@ export const TextBox: FC<Props> = ({
   return (
     <div>
       <span className={textClassName}>{text}</span>
+      {/* サブテキストがpropsで渡ってきた場合のみ表示 */}
       {subText && (
         <>
           <br />
