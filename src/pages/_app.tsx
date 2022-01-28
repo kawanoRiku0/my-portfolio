@@ -6,7 +6,7 @@ import Header from "components/layouts/Header";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
-    <div className="overflow-x-hidden min-w-[280px]">
+    <div className="min-w-[280px]">
       <div className="fixed top-0 w-full z-50">
         <Header />
       </div>
