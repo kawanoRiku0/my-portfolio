@@ -19,7 +19,7 @@ export const DefaultLayout: FC<Props> = ({
 
   return (
     <div className={wrapperClass}>
-      <div className="pt-28">
+      <div className="py-28">
         {pageTitle && <h2 className={titleClass}>{pageTitle}</h2>}
         {children}
       </div>
