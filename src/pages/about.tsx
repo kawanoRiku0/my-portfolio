@@ -30,7 +30,7 @@ const About: NextPage = () => {
               <div className="pt-20">
                 <ChronologySection
                   yearTextBox={<YearTextBox year="2002" />}
-                  imageUrl="/images/no-image.jpg"
+                  imageUrl="/images/about/baby.jpg"
                   eventTextBoxList={[<EventTextBox text="大阪で爆誕" />]}
                 />
               </div>
@@ -39,14 +39,18 @@ const About: NextPage = () => {
               <div className="pt-20">
                 <ChronologySection
                   yearTextBox={<YearTextBox year="2012" subText="小学生時代" />}
-                  imageUrl="/images/no-image.jpg"
+                  imageUrl="/images/about/minibasketball.jpg"
                   eventTextBoxList={[
+                    <EventTextBox
+                      text="バスケに出会う"
+                      subText="バスケ人生のはじまり"
+                    />,
                     <EventTextBox
                       text="バスケの全国大会に出場"
                       subText="人生のハイライト"
                     />,
                     <EventTextBox
-                      text="全国大会で最低のプレー連発"
+                      text="その全国大会で最低のプレー連発"
                       subText="人生最大の挫折"
                     />,
                   ]}
@@ -57,7 +61,7 @@ const About: NextPage = () => {
               <div className="pt-20">
                 <ChronologySection
                   yearTextBox={<YearTextBox year="2015" subText="中学時代" />}
-                  imageUrl="/images/no-image.jpg"
+                  imageUrl="/images/about/avengers.jpg"
                   eventTextBoxList={[
                     <EventTextBox
                       text="悔しさをバネにバスケ頑張る"
@@ -66,7 +70,7 @@ const About: NextPage = () => {
                     <EventTextBox text="中二病発生で自分は最強のバスケプレイヤーだと錯覚" />,
                     <EventTextBox
                       text="勉強はキチンと頑張る"
-                      subText="大阪府立高津高校に進学（ちょっとだけ賢い）"
+                      subText="大阪府立高津高校に進学（ちょっとだけ賢い）アベンジャーズになったりする"
                     />,
                   ]}
                 />
@@ -76,7 +80,7 @@ const About: NextPage = () => {
               <div className="pt-20">
                 <ChronologySection
                   yearTextBox={<YearTextBox year="2017" subText="高校時代" />}
-                  imageUrl="/images/no-image.jpg"
+                  imageUrl="/images/about/basketball.jpg"
                   eventTextBoxList={[
                     <EventTextBox
                       text="天狗になっていたが、高校バスケのレベルの高さに驚愕"
@@ -98,7 +102,7 @@ const About: NextPage = () => {
               <div className="pt-20">
                 <ChronologySection
                   yearTextBox={<YearTextBox year="2020" subText="高校三年生" />}
-                  imageUrl="/images/no-image.jpg"
+                  imageUrl="/images/about/programing.jpg"
                   eventTextBoxList={[
                     <EventTextBox
                       text="そんな時にプログラミングと出会う"
@@ -127,7 +131,7 @@ const About: NextPage = () => {
                   yearTextBox={
                     <YearTextBox year="2021" subText="大学生/これから" />
                   }
-                  imageUrl="/images/no-image.jpg"
+                  imageUrl="/images/about/now.png"
                   eventTextBoxList={[
                     <EventTextBox
                       text="動画編集もっと頑張る"
@@ -135,7 +139,11 @@ const About: NextPage = () => {
                     />,
                     <EventTextBox
                       text="急激にプログラミング熱が再来"
-                      subText="プログラミングスクールのメンターを開始/学習再開"
+                      subText="学習再開"
+                    />,
+                    <EventTextBox
+                      text="プログラミングスクールのメンターを開始"
+                      subText="開発もしたい！"
                     />,
                     <EventTextBox text="イマココ" />,
                   ]}
