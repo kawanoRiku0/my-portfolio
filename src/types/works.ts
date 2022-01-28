@@ -1,4 +1,4 @@
-export type Works = {
+export type Work = {
   id: string;
   createdAt: string;
   updatedAt: string;
