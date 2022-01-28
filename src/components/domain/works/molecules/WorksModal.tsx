@@ -61,6 +61,7 @@ export const WorksModal: FC<Props> = ({ work, isOpen, toggle }) => {
                   height={400}
                   layout="intrinsic"
                   objectFit="cover"
+                  priority={true}
                 />
 
                 <div className="mt-2">

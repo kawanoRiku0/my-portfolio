@@ -25,6 +25,7 @@ export const ChronologySection: FC<Props> = ({
             layout="intrinsic"
             objectFit="cover"
             className="rounded-2xl"
+            priority={true}
           />
         </div>
         {eventTextBoxList.map((eventTextBox, index) => {

@@ -31,6 +31,7 @@ export const ArticleCard: FC<Props> = ({ article }) => {
           objectFit="cover"
           width={1600}
           height={900}
+          priority={true}
         />
         <div className="px-5 mt-4 pt-2">
           <h2 className="font-bold mb-6 text-base">

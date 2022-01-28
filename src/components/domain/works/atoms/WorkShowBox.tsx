@@ -20,6 +20,7 @@ export const WorkShowBox: FC<Props> = ({ work, handleOnClick }) => {
         height={500}
         layout="intrinsic"
         objectFit="cover"
+        priority={true}
       />
     </div>
   );
