@@ -12,4 +12,5 @@ export type Work = {
   };
   description: string;
   url: string;
+  skill: string;
 };
